@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Matchmaker</title>
+    </head>
+    <!--
+        Author: Nick Paugys
+        Project: MatchmakerWebLite
+    -->
+    <body>
+        <h1>Matchmaker For the Web</h1>
+        <h2>Instructions...</h2>
+        <p>In this test, you will select your response to this series of 5 questions in order
+        to compute your compatibility with the one and only Nick Paugys.</p>
+        <label>I like camping and spending time outdoors in general.</label>
+        <select id="q1">
+            <option value="100">Strongly Agree</option>
+            <option value="75">Somewhat Agree</option>
+            <option value="50">Neither Agree nor Disagree</option>
+            <option value="25">Somewhat Disagree</option>
+            <option value="0">Strongly Agree</option>
+        </select>
+        <br />
+        <label>Napoleon Dynamite is a great movie.</label>
+        <select id="q2">
+            <option value="100">Strongly Agree</option>
+            <option value="75">Somewhat Agree</option>
+            <option value="50">Neither Agree nor Disagree</option>
+            <option value="25">Somewhat Disagree</option>
+            <option value="0">Strongly Agree</option>
+        </select>
+        <br />
+        <label>I enjoy challenging myself through exercise.</label>
+        <select id="q3">
+            <option value="100">Strongly Agree</option>
+            <option value="75">Somewhat Agree</option>
+            <option value="50">Neither Agree nor Disagree</option>
+            <option value="25">Somewhat Disagree</option>
+            <option value="0">Strongly Agree</option>
+        </select>
+        <br />
+        <label>I have a strong faith in the Lord.</label>
+        <select id="q4">
+            <option value="100">Strongly Agree</option>
+            <option value="75">Somewhat Agree</option>
+            <option value="50">Neither Agree nor Disagree</option>
+            <option value="25">Somewhat Disagree</option>
+            <option value="0">Strongly Agree</option>
+        </select>
+        <br />
+        <label>I am an athletic person.</label>
+        <select id="q5">
+            <option value="100">Strongly Agree</option>
+            <option value="75">Somewhat Agree</option>
+            <option value="50">Neither Agree nor Disagree</option>
+            <option value="25">Somewhat Disagree</option>
+            <option value="0">Strongly Agree</option>
+        </select>
+
+        <!--
+            <br /> means line break
+        -->
+        <br /><br /><br />
+        <button onclick="calculateCompatibility()">Calculate Compatibility</button>
+        
+        <p id="compatibility"></p>
+        
+        <script>
+            console.log("Starting Matchmaker Lite...")
+
+            function.calculateCompatibility() {
+                console.log("calculateCompatibility()")
+
+                const MAX_SCORE = 100;
+
+                // Gets the current values (5,4,3,2,1) for each of the questions
+                let q1R = document.getElementById("q1").selectOptions[0].value;
+                let q2R = document.getElementById("q2").selectOptions[0].value;
+                let q3R = document.getElementById("q3").selectOptions[0].value;
+                let q4R = document.getElementById("q4").selectOptions[0].value;
+                let q5R = document.getElementById("q5").selectOptions[0].value;
+
+                var score = (q1R + q2R + q3R + q4R + q5R) / 5;
+                    score = Math.round(score);
+
+                document.getElementById("compatibility").innerHTML = "Your compatibility is:" + score"%";
+            }
+        </script>
+    </body>
+</html>
