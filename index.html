@@ -75,11 +75,11 @@ function calculateCompatibility() {
     const MAX_SCORE = 100;
 
     // Gets the current values (5,4,3,2,1) for each of the questions
-    let q1R = document.getElementById("q1").selectOptions[0].value;
-    let q2R = document.getElementById("q2").selectOptions[0].value;
-    let q3R = document.getElementById("q3").selectOptions[0].value;
-    let q4R = document.getElementById("q4").selectOptions[0].value;
-    let q5R = document.getElementById("q5").selectOptions[0].value;
+    let q1R = document.getElementById("q1").selectedOptions[0].value;
+    let q2R = document.getElementById("q2").selectedOptions[0].value;
+    let q3R = document.getElementById("q3").selectedOptions[0].value;
+    let q4R = document.getElementById("q4").selectedOptions[0].value;
+    let q5R = document.getElementById("q5").selectedOptions[0].value;
 
     var score = (q1R + q2R + q3R + q4R + q5R) / 5;
         score = Math.round(score);
@@ -87,5 +87,5 @@ function calculateCompatibility() {
     document.getElementById("compatibility").innerHTML = "Your compatibility is: " + score;
 }
 </script>
-</body>
+</body>git
 </html>
