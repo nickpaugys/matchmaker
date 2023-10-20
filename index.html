@@ -19,7 +19,7 @@
         <option value="75">Somewhat Agree</option>
         <option value="50">Neither Agree nor Disagree</option>
         <option value="25">Somewhat Disagree</option>
-        <option value="0">Strongly Agree</option>
+        <option value="0">Strongly Disagree</option>
     </select>
     <br />
     <label>Napoleon Dynamite is a great movie.</label><br />
@@ -28,7 +28,7 @@
         <option value="75">Somewhat Agree</option>
         <option value="50">Neither Agree nor Disagree</option>
         <option value="25">Somewhat Disagree</option>
-        <option value="0">Strongly Agree</option>
+        <option value="0">Strongly Disagree</option>
     </select>
     <br />
     <label>I enjoy challenging myself through exercise.</label><br />
@@ -37,7 +37,7 @@
         <option value="75">Somewhat Agree</option>
         <option value="50">Neither Agree nor Disagree</option>
         <option value="25">Somewhat Disagree</option>
-        <option value="0">Strongly Agree</option>
+        <option value="0">Strongly Disagree</option>
     </select>
     <br />
     <label>I have a strong faith in the Lord.</label><br />
@@ -46,7 +46,7 @@
         <option value="75">Somewhat Agree</option>
         <option value="50">Neither Agree nor Disagree</option>
         <option value="25">Somewhat Disagree</option>
-        <option value="0">Strongly Agree</option>
+        <option value="0">Strongly Disagree</option>
     </select>
     <br />
     <label>I am an athletic person.</label><br />
@@ -55,7 +55,7 @@
         <option value="75">Somewhat Agree</option>
         <option value="50">Neither Agree nor Disagree</option>
         <option value="25">Somewhat Disagree</option>
-        <option value="0">Strongly Agree</option>
+        <option value="0">Strongly Disagree</option>
     </select>
 
     <!--
@@ -112,7 +112,22 @@ function calculateCompatibility() {
     const avgscore = Math.round(totalscore / 5);
     console.log("score=" + avgscore)
 
-    document.getElementById("compatibility").innerHTML = "Your compatibility is: " + avgscore;
+    document.getElementById("compatibility").innerHTML = "Your compatibility score is: " + avgscore + "%";
+
+    let feedback;
+
+    if (0 < avgscore <= 25) {
+        feedback = "You are a horrrible candidate for Nick.";
+    }
+    else if (25 < avgscore <= 50) {
+        feedback = "It doesn't appear that you'd be a good match for Nick.";
+    }
+    else if (50 < avgscore <= 75) {
+        feedback = "Indications are that you're a decent match for Nick.";
+    }
+    else {
+        feedback = "You are a great match for Nick!";
+    }
 }
 </script>
 </body>
