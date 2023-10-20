@@ -106,10 +106,11 @@ function calculateCompatibility() {
 	console.log(document.getElementById("q5").selectedOptions[0].value);
 	console.log(q5R);
 
-    let score = (q1R + q2R + q3R + q4R + q5R) / 5;
-        score = Math.round(score);
+    let totalscore = q1R + q2R + q3R + q4R + q5R;
+    console.log("total=" + totalscore)
 
-    console.log("score=" + score)
+    let avgscore = Math.round(totalscore / 5);
+    console.log("score=" + avgscore)
 
     document.getElementById("compatibility").innerHTML = "Your compatibility is: " + score;
 }
