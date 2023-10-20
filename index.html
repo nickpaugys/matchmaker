@@ -82,34 +82,24 @@ function calculateCompatibility() {
     let q5R = document.getElementById("q5").selectedOptions[0].value;
     
     console.log("Question 1 Answers:")
-	console.log(document.getElementById("q1").selectedOptions[0].text);
-	console.log(document.getElementById("q1").selectedOptions[0].value);
 	console.log(q1R);
 
 	console.log("Question 2 Answers:");
-	console.log(document.getElementById("q2").selectedOptions[0].text);
-	console.log(document.getElementById("q2").selectedOptions[0].value);
 	console.log(q2R);
 
 	console.log("Question 3 Answers:");
-	console.log(document.getElementById("q3").selectedOptions[0].text);
-	console.log(document.getElementById("q3").selectedOptions[0].value);
 	console.log(q3R);
 
     console.log("Question 4 Answers:");
-	console.log(document.getElementById("q4").selectedOptions[0].text);
-	console.log(document.getElementById("q4").selectedOptions[0].value);
 	console.log(q4R);
 
     console.log("Question 5 Answers:");
-	console.log(document.getElementById("q5").selectedOptions[0].text);
-	console.log(document.getElementById("q5").selectedOptions[0].value);
 	console.log(q5R);
 
-    let totalscore = q1R + q2R + q3R + q4R + q5R;
+    const totalscore = q1R + q2R + q3R + q4R + q5R;
     console.log("total=" + totalscore)
 
-    let avgscore = Math.round(totalscore / 5);
+    const avgscore = Math.round(totalscore / 5);
     console.log("score=" + avgscore)
 
     document.getElementById("compatibility").innerHTML = "Your compatibility is: " + score;
