@@ -81,11 +81,11 @@ function calculateCompatibility() {
     let q4R = document.getElementById("q4").selectedOptions[0].value;
     let q5R = document.getElementById("q5").selectedOptions[0].value;
 
-    var score = (q1R + q2R + q3R + q4R + q5R) / 5;
+    let score = (q1R + q2R + q3R + q4R + q5R) / 5;
         score = Math.round(score);
 
     document.getElementById("compatibility").innerHTML = "Your compatibility is: " + score;
 }
 </script>
-</body>git
+</body>
 </html>
