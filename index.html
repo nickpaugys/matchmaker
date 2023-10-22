@@ -116,14 +116,13 @@ function calculateCompatibility() {
     document.getElementById("compatibility").innerHTML = "Your compatibility score is: " + avgscore + "%";
     
     let feedback;
-
-    if (0 < avgscore <= 25) {
+    if (0 < avgscore && avgscore < 26) {
         feedback = "You are a horrrible candidate for Nick.";
     }
-    else if (25 < avgscore <= 50) {
+    else if (26 < avgscore && avgscore < 51) {
         feedback = "It doesn't appear that you'd be a good match for Nick.";
     }
-    else if (50 < avgscore <= 75) {
+    else if (51 < avgscore && avgscore < 75) {
         feedback = "Indications are that you're a decent match for Nick.";
     }
     else {
