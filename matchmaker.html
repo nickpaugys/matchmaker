@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Matchmaker</title>
+    <link rel="stylesheet" href="matchmaker.css">
+</head>
+    <!--
+        Author: Nick Paugys
+        Project: MatchmakerWebLite
+    -->
+<body>
+    <h1>Matchmaker For the Web</h1>
+    <h2>Instructions...</h2>
+    <h3>In this test, you will select your response to this series of 5 questions in order
+        to compute your compatibility with the one and only Nick Paugys.</h3>
+    <img src="redheart.png" class="center" style="width: 350px;"><br />
+    <label>I like camping and spending time outdoors in general.</label><br />
+    <select id="q1">
+        <option value="100">Strongly Agree</option>
+        <option value="75">Somewhat Agree</option>
+        <option value="50">Neither Agree nor Disagree</option>
+        <option value="25">Somewhat Disagree</option>
+        <option value="0">Strongly Disagree</option>
+    </select>
+    <br /><br />
+    <label>Napoleon Dynamite is a great movie.</label><br />
+    <select id="q2">
+        <option value="100">Strongly Agree</option>
+        <option value="75">Somewhat Agree</option>
+        <option value="50">Neither Agree nor Disagree</option>
+        <option value="25">Somewhat Disagree</option>
+        <option value="0">Strongly Disagree</option>
+    </select>
+    <br /><br />
+    <label>I enjoy challenging myself through exercise.</label><br />
+    <select id="q3">
+        <option value="100">Strongly Agree</option>
+        <option value="75">Somewhat Agree</option>
+        <option value="50">Neither Agree nor Disagree</option>
+        <option value="25">Somewhat Disagree</option>
+        <option value="0">Strongly Disagree</option>
+    </select>
+    <br /><br />
+    <label>I have a strong faith in the Lord.</label><br />
+    <select id="q4">
+        <option value="100">Strongly Agree</option>
+        <option value="75">Somewhat Agree</option>
+        <option value="50">Neither Agree nor Disagree</option>
+        <option value="25">Somewhat Disagree</option>
+        <option value="0">Strongly Disagree</option>
+    </select>
+    <br /><br />
+    <label>I am an athletic person.</label><br />
+    <select id="q5">
+        <option value="100">Strongly Agree</option>
+        <option value="75">Somewhat Agree</option>
+        <option value="50">Neither Agree nor Disagree</option>
+        <option value="25">Somewhat Disagree</option>
+        <option value="0">Strongly Disagree</option>
+    </select>
+
+    <!--
+        <br /> means line break
+    -->
+    <br /><br /><br />
+    <button onclick="calculateCompatibility()">Calculate Compatibility</button>
+    
+    <p id="compatibility"></p>
+    <p id="result"></p>
+        
+<script>
+console.log("Starting Matchmaker Lite...")
+
+function calculateCompatibility() {
+    console.log("calculateCompatibility()")
+
+    const MAX_SCORE = 100;
+
+    // Gets the current values (5,4,3,2,1) for each of the questions
+    let q1R = document.getElementById("q1").selectedOptions[0].value;
+    let q2R = document.getElementById("q2").selectedOptions[0].value;
+    let q3R = document.getElementById("q3").selectedOptions[0].value;
+    let q4R = document.getElementById("q4").selectedOptions[0].value;
+    let q5R = document.getElementById("q5").selectedOptions[0].value;
+    
+    console.log("Question 1 Answers:")
+	console.log(document.getElementById("q1").selectedOptions[0].text);
+	console.log(document.getElementById("q1").selectedOptions[0].value);
+	console.log(q1R);
+
+	console.log("Question 2 Answers:");
+	console.log(document.getElementById("q2").selectedOptions[0].text);
+	console.log(document.getElementById("q2").selectedOptions[0].value);
+	console.log(q2R);
+
+	console.log("Question 3 Answers:");
+	console.log(document.getElementById("q3").selectedOptions[0].text);
+	console.log(document.getElementById("q3").selectedOptions[0].value);
+	console.log(q3R);
+
+    console.log("Question 4 Answers:");
+	console.log(document.getElementById("q4").selectedOptions[0].text);
+	console.log(document.getElementById("q4").selectedOptions[0].value);
+	console.log(q4R);
+
+    console.log("Question 5 Answers:");
+	console.log(document.getElementById("q5").selectedOptions[0].text);
+	console.log(document.getElementById("q5").selectedOptions[0].value);
+	console.log(q5R);
+
+    const totalscore = +q1R + +q2R + +q3R + +q4R + +q5R;
+    console.log("total=" + totalscore)
+
+    const avgscore = Math.round(totalscore / 5);
+    console.log("score=" + avgscore)
+
+    document.getElementById("compatibility").innerHTML = "Your compatibility score is: " + avgscore + "%";
+    
+    let feedback;
+    if (0 < avgscore && avgscore < 26) {
+        feedback = "You are a horrrible candidate for Nick.";
+    }
+    else if (26 < avgscore && avgscore < 51) {
+        feedback = "It doesn't appear that you'd be a good match for Nick.";
+    }
+    else if (51 < avgscore && avgscore < 75) {
+        feedback = "Indications are that you're a decent match for Nick.";
+    }
+    else {
+        feedback = "You are a great match for Nick!";
+    }
+
+    document.getElementById("result").innerHTML = feedback;
+}
+</script>
+</body>
+</html>
